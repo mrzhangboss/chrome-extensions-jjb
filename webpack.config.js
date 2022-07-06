@@ -1,5 +1,6 @@
 const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+// const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const vueLoader = require('vue-loader');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { EnvironmentPlugin } = require('webpack')
@@ -107,7 +108,7 @@ module.exports = {
       }
     ]),
     new CleanWebpackPlugin(),
-    new VueLoaderPlugin(),
+    new vueLoader.VueLoaderPlugin(),
     new EnvironmentPlugin({
       NODE_ENV: 'development',
       BROWSER: 'chrome',
